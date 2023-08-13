@@ -45,10 +45,10 @@ class ProductManager {
 let manager = new ProductManager()
 
 try {
-    manager.addProduct('mesa', 'cuadrada', 500, 'foto', 123, 500)
-    manager.addProduct('mate', 'redondo', 200, 'foto', 321, 300)
-    manager.addProduct('notebook', 'roja', 9500, 'foto', 323, 100)
-    manager.addProduct('notebook', 'roja', 9500, 'foto', 323, 100)
+    manager.addProduct('casa', 'mediana', 500, 'foto', 123, 500)
+    manager.addProduct('auto', 'ford', 200, 'foto', 321, 300)
+    manager.addProduct('edificio', 'gris', 9500, 'foto', 323, 100)
+    manager.addProduct('mansion', 'roja', 9500, 'foto', 323, 100)
 
 
     const product = manager.getProductById(2)

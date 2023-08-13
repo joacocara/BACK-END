@@ -1,0 +1,89 @@
+class ProductManager {
+    constructor() {
+        this.Products = []
+        this.nextProductId = 1 
+    }
+
+    async addProduct(title, description, price, thumbnail, stock) {
+        const code = this.nextProductId.toString().padStart(4, '0')
+
+        const productExists = this.Products.some(
+            product => product.title === title && product.code === code
+        )
+
+        if (productExists) {
+            throw new Error(`Error: Ya existe un producto con el mismo título y código.`)
+        }
+
+        let nuevoProducto = {
+            id: this.nextProductId, 
+            title,
+            description,
+            price,
+            thumbnail,
+            code,
+            stock
+        }
+
+        this.Products.push(nuevoProducto)
+        this.nextProductId++ 
+    }
+
+    async getProducts() {
+        return this.Products
+    }
+
+    async getProductById(id) {
+        const product = this.Products.find(product => product.id === id)
+        if (!product) {
+            throw new Error(`Error: No se encontró ningún producto con el ID ${id}.`)
+        }
+        return product
+    }
+
+    async updateProduct(id, updates) {
+        const productIndex = this.Products.findIndex(product => product.id === id)
+
+        if (productIndex === -1) {
+            throw new Error(`Error: No se encontró ningún producto con el ID ${id}.`)
+        }
+
+        this.Products[productIndex] = { ...this.Products[productIndex], ...updates }
+    }
+
+    async deleteProduct(id) {
+        const productIndex = this.Products.findIndex(product => product.id === id)
+
+        if (productIndex === -1) {
+            throw new Error(`Error: No se encontró ningún producto con el ID ${id}.`)
+        }
+
+        this.Products.splice(productIndex, 1)
+    }
+}
+
+(async () => {
+    let manager = new ProductManager()
+
+    try {
+        await manager.addProduct('casa', 'mediana', 500, 'foto', 123, 500)
+        await manager.addProduct('auto', 'ford', 200, 'foto', 321, 300)
+        await manager.addProduct('edificio', 'gris', 9500, 'foto', 323, 100)
+        await manager.addProduct('mansion', 'roja', 9500, 'foto', 323, 100)
+
+        const products = await manager.getProducts()
+        console.log("Productos:", products)
+
+        const product = await manager.getProductById(2)
+        console.log("Producto encontrado:", product)
+
+        await manager.updateProduct(2, { price: 250 })
+        console.log("Producto actualizado:", await manager.getProductById(2))
+
+        await manager.deleteProduct(3)
+        console.log("Producto eliminado")
+
+    } catch (error) {
+        console.error(error.message)
+    }
+})()
