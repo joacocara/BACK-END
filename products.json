@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "title": "mesa",
+    "description": "cuadrada",
+    "price": 500,
+    "thumbnail": "foto",
+    "code": "0001",
+    "stock": 123
+  },
+  {
+    "id": 2,
+    "title": "mate",
+    "description": "redondo",
+    "price": 250,
+    "thumbnail": "foto",
+    "code": "0002",
+    "stock": 321
+  },
+  {
+    "id": 4,
+    "title": "notebook",
+    "description": "roja",
+    "price": 9500,
+    "thumbnail": "foto",
+    "code": "0004",
+    "stock": 323
+  },
+  {
+    "id": 5,
+    "title": "mesa",
+    "description": "cuadrada",
+    "price": 500,
+    "thumbnail": "foto",
+    "code": "0005",
+    "stock": 123
+  },
+  {
+    "id": 6,
+    "title": "mate",
+    "description": "redondo",
+    "price": 200,
+    "thumbnail": "foto",
+    "code": "0006",
+    "stock": 321
+  },
+  {
+    "id": 7,
+    "title": "notebook",
+    "description": "roja",
+    "price": 9500,
+    "thumbnail": "foto",
+    "code": "0007",
+    "stock": 323
+  },
+  {
+    "id": 8,
+    "title": "notebook",
+    "description": "roja",
+    "price": 9500,
+    "thumbnail": "foto",
+    "code": "0008",
+    "stock": 323
+  },
+  {
+    "id": 9,
+    "title": "mesa",
+    "description": "cuadrada",
+    "price": 500,
+    "thumbnail": "foto",
+    "code": "0009",
+    "stock": 123
+  },
+  {
+    "id": 10,
+    "title": "mate",
+    "description": "redondo",
+    "price": 200,
+    "thumbnail": "foto",
+    "code": "0010",
+    "stock": 321
+  },
+  {
+    "id": 11,
+    "title": "notebook",
+    "description": "roja",
+    "price": 9500,
+    "thumbnail": "foto",
+    "code": "0011",
+    "stock": 323
+  },
+  {
+    "id": 12,
+    "title": "notebook",
+    "description": "roja",
+    "price": 9500,
+    "thumbnail": "foto",
+    "code": "0012",
+    "stock": 323
+  },
+  {
+    "id": 13,
+    "title": "mesa",
+    "description": "cuadrada",
+    "price": 500,
+    "thumbnail": "foto",
+    "code": "0013",
+    "stock": 123
+  },
+  {
+    "id": 14,
+    "title": "mate",
+    "description": "redondo",
+    "price": 200,
+    "thumbnail": "foto",
+    "code": "0014",
+    "stock": 321
+  },
+  {
+    "id": 15,
+    "title": "notebook",
+    "description": "roja",
+    "price": 9500,
+    "thumbnail": "foto",
+    "code": "0015",
+    "stock": 323
+  },
+  {
+    "id": 16,
+    "title": "notebook",
+    "description": "roja",
+    "price": 9500,
+    "thumbnail": "foto",
+    "code": "0016",
+    "stock": 323
+  }
+]
