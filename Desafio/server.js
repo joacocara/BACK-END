@@ -3,7 +3,8 @@ const app = express()
 const port = 8080
 
 // Importar la clase ProductManager
-const ProductManager = require('./3er-desafio') // Asegúrate de que la ruta sea correcta
+const ProductManager = require('./3er-desafio')
+ // Asegúrate de que la ruta sea correcta
 
 // Crear una instancia de ProductManager
 const productManager = new ProductManager()
@@ -66,10 +67,10 @@ app.delete('/products/:id', async (req, res) => {
   }
 })
 
-// Ruta para obtener los primeros N productos
-app.get('/products/limit/:limit', async (req, res) => {
+// Ruta para obtener los primeros 5 productos
+app.get('/products', async (req, res) => {
   try {
-    let limit = parseInt(req.params.limit)
+    let limit = parseInt(req.query.limit)
     if (isNaN(limit) || limit <= 0) {
       limit = 5
     }
@@ -79,6 +80,7 @@ app.get('/products/limit/:limit', async (req, res) => {
     res.status(500).json({ error: 'Error al obtener los productos.' })
   }
 })
+
 
 // Iniciar el servidor
 app.listen(port, () => {

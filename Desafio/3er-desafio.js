@@ -124,3 +124,4 @@ class ProductManager {
     }
 })()
 
+module.exports = ProductManager // Se usa para exportar
