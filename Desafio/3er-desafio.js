@@ -95,11 +95,18 @@ class ProductManager {
     let manager = new ProductManager()
 
     try {
-        await manager.addProduct('mesa', 'cuadrada', 500, 'foto', 123, 500)
-        await manager.addProduct('mate', 'redondo', 200, 'foto', 321, 300)
-        await manager.addProduct('notebook', 'roja', 9500, 'foto', 323, 100)
-        await manager.addProduct('notebook', 'roja', 9500, 'foto', 323, 100)
-
+        await manager.addProduct('mesa', 'cuadrada', 500, 'foto1', 123, 500)
+        await manager.addProduct('mate', 'redondo', 200, 'foto2', 321, 300)
+        await manager.addProduct('notebook', 'roja', 9500, 'foto3', 326, 101)
+        await manager.addProduct('cargador', 'rosa', 700, 'foto4', 300, 100)
+        await manager.addProduct('pc', 'verde', 10500, 'foto5', 750, 17)
+        await manager.addProduct('patineta', 'gris', 8500, 'foto6', 650, 30)
+        await manager.addProduct('alfombra', 'negra', 3000, 'foto7', 900, 40)
+        await manager.addProduct('mouse', 'negra', 15000, 'foto8', 699, 50) 
+        await manager.addProduct('teclado', 'negra', 25000, 'foto9', 799, 60)
+        await manager.addProduct('auriculares', 'negra', 70000, 'foto10', 392, 70)
+        await manager.addProduct('pad', 'negra', 120, 'foto11', 5, 80)
+        
         const products = await manager.getProducts()
         console.log("Productos:", products)
 
@@ -116,3 +123,4 @@ class ProductManager {
         console.error(error.message)
     }
 })()
+
