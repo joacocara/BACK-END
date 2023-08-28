@@ -4,7 +4,9 @@
     "title": "mesa",
     "description": "cuadrada",
     "price": 500,
+    "status": true,
     "thumbnail": "foto1",
+    "category": "Categoría 1",
     "code": "0001",
     "stock": 123
   },
@@ -13,7 +15,9 @@
     "title": "mate",
     "description": "redondo",
     "price": 250,
+    "status": true,
     "thumbnail": "foto2",
+    "category": "Categoría 1",
     "code": "0002",
     "stock": 321
   },
@@ -22,7 +26,9 @@
     "title": "cargador",
     "description": "rosa",
     "price": 700,
+    "status": true,
     "thumbnail": "foto4",
+    "category": "Categoría 1",
     "code": "0004",
     "stock": 300
   },
@@ -31,7 +37,9 @@
     "title": "pc",
     "description": "verde",
     "price": 10500,
+    "status": true,
     "thumbnail": "foto5",
+    "category": "Categoría 1",
     "code": "0005",
     "stock": 750
   },
@@ -40,7 +48,9 @@
     "title": "patineta",
     "description": "gris",
     "price": 8500,
+    "status": true,
     "thumbnail": "foto6",
+    "category": "Categoría 1",
     "code": "0006",
     "stock": 650
   },
@@ -49,7 +59,9 @@
     "title": "alfombra",
     "description": "negra",
     "price": 3000,
+    "status": true,
     "thumbnail": "foto7",
+    "category": "Categoría 1",
     "code": "0007",
     "stock": 900
   },
@@ -58,7 +70,9 @@
     "title": "mouse",
     "description": "negra",
     "price": 15000,
+    "status": true,
     "thumbnail": "foto8",
+    "category": "Categoría 1",
     "code": "0008",
     "stock": 699
   },
@@ -67,7 +81,9 @@
     "title": "teclado",
     "description": "negra",
     "price": 25000,
+    "status": true,
     "thumbnail": "foto9",
+    "category": "Categoría 1",
     "code": "0009",
     "stock": 799
   },
@@ -76,7 +92,9 @@
     "title": "auriculares",
     "description": "negra",
     "price": 70000,
+    "status": true,
     "thumbnail": "foto10",
+    "category": "Categoría 1",
     "code": "0010",
     "stock": 392
   },
@@ -85,7 +103,9 @@
     "title": "pad",
     "description": "negra",
     "price": 120,
+    "status": true,
     "thumbnail": "foto11",
+    "category": "Categoría 1",
     "code": "0011",
     "stock": 5
   }
