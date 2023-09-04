@@ -3,8 +3,8 @@ const router=Router()
 const path=require('path')
 var fs = require('fs')
 
-let ruta=path.join(__dirname,'../Desafios','carts.json') 
-let rutaProductos=path.join(__dirname,'../Desafios','products.json') 
+let ruta=path.join(__dirname,'../Desafio','carts.json') 
+let rutaProductos=path.join(__dirname,'../Desafio','products.json') 
 
 function getCarts(){
     if(fs.existsSync(ruta)){
@@ -13,26 +13,25 @@ function getCarts(){
 }
 
 function getCartById(id){
+    let isPresent = false;
+    let location = -1;
+    let i = -1;
+    let carts = getCarts();
 
-    //metodo que retorna el carrito seleccionado  usando su ID
-    let isPresent=false
-    let location=-1
-    let i=-1
-    let carts = getCarts()
-    console.log(carts)
-    console.log(carts.products[0])
-    carts.forEach(element => { 
-        i++
-        if (element.id == id) 
-        {
-            isPresent=true
-            location=i
+    carts.forEach((cart, index) => { 
+        if (cart.id == id) {
+            isPresent = true;
+            location = index;
         }
-        
-    })
-    if (isPresent) {return carts[location]}
-    return ("Not Found")
+    });
+
+    if (isPresent) {
+        return carts[location];
+    }
+
+    return "Not Found";
 }
+
 
 function getProductById(id){
 
