@@ -1,43 +1,48 @@
-const express=require('express')
-const http = require('http')
-const socketIo = require('socket.io')
-const productsRouter=require('../routes/products.router')
-const cartsRouter=require('../routes/cart.router')
-const handlebars = require( 'express-handlebars')
-const PORT=3000
+const express = require('express');
+const fs = require('fs'); // Importa el módulo fs
+const handlebars = require('express-handlebars');
+const http = require('http');
+const socketIo = require('socket.io');
+const path = require('path'); // Importa el módulo path para manejar rutas de archivos
+const PORT = 3000;
 
-const app=express()
+const app = express();
 
-const server = http.createServer(app) // Crea el servidor HTTP con Express.
+const server = http.createServer(app); // Crea el servidor HTTP con Express.
 
 // Configura Socket.IO en el servidor HTTP.
-const io = socketIo(server)
+const io = socketIo(server);
 
-app.use(express.json())
-app.use(express.urlencoded({extended:true}))
+// Middleware para manejar JSON y datos codificados en la URL
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.engine('handlebars', handlebars.engine())
-app.set('views', __dirname + '/views')
-app.set('view engine', 'handlebars')
-
-
-//app.use('/api/products',productsRouter)
-//app.use('/api/carts',cartsRouter)
-//pp.use('/realtimeproducts',)
+// Configura Handlebars como motor de plantillas
+const hbs = handlebars.create(); // Utiliza handlebars.create() para crear una instancia de Handlebars
+app.engine('handlebars', hbs.engine);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'handlebars');
 
 app.get('/', (req, res) => {
-    
-    let nombre = 'Joaquin'
-    res.setHeader('Content-Type','text/html')
-    res.status(200).render('home', {
-        nombre,
-        titulo: 'home page'
-    })
+    try {
+        const products = JSON.parse(fs.readFileSync(__dirname + '/Desafio/products.json', 'utf-8'));
+        res.render('home', {
+            products,
+            titulo: 'home page'
+        });
+    } catch (error) {
+        console.error('Error al leer el archivo JSON:', error);
+        res.status(500).send('Error interno del servidor');
+    }
 })
 
+// Manejo de la conexión de WebSocket
+io.on('connection', (socket) => {
+    console.log('Cliente conectado');
 
-
+    // Lógica de WebSocket aquí
+});
 
 server.listen(PORT, () => {
-    console.log(`Server escuchando en puerto ${PORT}`)
-})
+    console.log(`Server escuchando en puerto ${PORT}`);
+});
